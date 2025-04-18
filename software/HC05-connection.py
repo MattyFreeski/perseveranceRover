@@ -1,3 +1,4 @@
+# ADD SERVO MOVEMENT
 import customtkinter as ctk
 from pyfirmata2 import Arduino
 import serial.tools.list_ports
@@ -47,15 +48,25 @@ class MotorControlApp(ctk.CTk):
         self.btn_z.bind('<ButtonPress-1>', lambda e: self.motion_start('Z'))
         self.btn_z.bind('<ButtonRelease-1>', lambda e: self.motion_stop())
 
+        self.btn_a = ctk.CTkButton(self.controls_frame, text="← A", width=80)
+        self.btn_a.grid(row=1, column=0, padx=10, pady=5)
+        self.btn_a.bind('<ButtonPress-1>', lambda e: self.motion_start('A'))
+        self.btn_a.bind('<ButtonRelease-1>', lambda e: self.motion_stop())
+
+        self.btn_d = ctk.CTkButton(self.controls_frame, text="→ D", width=80)
+        self.btn_d.grid(row=1, column=2, padx=10, pady=5)
+        self.btn_d.bind('<ButtonPress-1>', lambda e: self.motion_start('D'))
+        self.btn_d.bind('<ButtonRelease-1>', lambda e: self.motion_stop())
+
         self.btn_q = ctk.CTkButton(self.controls_frame, text="← Q", width=80)
-        self.btn_q.grid(row=1, column=0, padx=10, pady=5)
+        self.btn_q.grid(row=0, column=0, padx=10, pady=5)
         self.btn_q.bind('<ButtonPress-1>', lambda e: self.motion_start('Q'))
         self.btn_q.bind('<ButtonRelease-1>', lambda e: self.motion_stop())
 
-        self.btn_d = ctk.CTkButton(self.controls_frame, text="→ E", width=80)
-        self.btn_d.grid(row=1, column=2, padx=10, pady=5)
-        self.btn_d.bind('<ButtonPress-1>', lambda e: self.motion_start('E'))
-        self.btn_d.bind('<ButtonRelease-1>', lambda e: self.motion_stop())
+        self.btn_e = ctk.CTkButton(self.controls_frame, text="→ E", width=80)
+        self.btn_e.grid(row=0, column=2, padx=10, pady=5)
+        self.btn_e.bind('<ButtonPress-1>', lambda e: self.motion_start('E'))
+        self.btn_e.bind('<ButtonRelease-1>', lambda e: self.motion_stop())
 
         self.btn_stop = ctk.CTkButton(self.controls_frame, text="■ Stop", command=self.stop, width=80)
         self.btn_stop.grid(row=1, column=1, padx=10, pady=5)
