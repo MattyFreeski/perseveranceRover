@@ -29,9 +29,10 @@ activate:
 ###############################################################################
 ###				  				Code execution  							###
 ###############################################################################
-run: database neuralNetwork postProcessing
+run:
+run:
+	@echo "\n\n 🎮 Starting the controller app 🎮 \n"
+	bash -c "source $(shell conda info --base)/etc/profile.d/conda.sh && \
+			 conda activate $(ENV_NAME) && \
+			 python3 roverCode.py"
 
-database:
-	@echo "\n\n 📂 Database creation \n"
-	bash -i -c "conda activate $(ENV_NAME) && \
-				python3 "
