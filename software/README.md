@@ -1,66 +1,61 @@
-# stocksPredictor
-Neural Network algorithm to predict the stocks market
+# Perseverance rover - SOFTWARE
+
 
 ## Contents
 
-1. [Getting Started](#getting-started)  
-2. [Running the code](#running-the-code)  
 
-   2.1. [Database generation only](#database-generation-only)  
-   2.2. [Machine Learning only](#machine-learning-only)  
+1. [Prerequisites](#prerequisites)
+2. [Getting Started](#getting-started)  
+   2.1. [Arduino](#arduino)   
+   2.2. [Python](#python)
 
+
+## Prerequisites 
+   1. Download and install [Arduino IDE](https://www.arduino.cc/en/software/)
+
+   2. Download and install [Anaconda3](https://www.anaconda.com/download)
 
 
 
 ## Getting Started
 
-1. **Clone the repository:**
-   ```bash
-   git clone 
-   ```
+Clone the repository by opening your termimal and typing:
+```bash
+git clone https://github.com/MattyFreeski/perseveranceRover.git
+```
 
 
-1. **Download and install [Poetry](https://install.python-poetry.org)** if not already present:
+### Arduino
+
+The Arduino software part is very simple:
+1. Connect your Arduino to the PC via USB
+2. Open `standardFirmata.ino` file in your Arduino IDE
+3. Select the board from the dropdown menu
+4. Click the `Upload` button
+
+### Python
+1. **Install the dependencies**
+
+   The `makefile` creates a conda environment by running in your terminal:
+
    ```bash
-   curl -sSL https://install.python-poetry.org | python3 -
+   make install
    ```
+
+3. **Launch the controller application**
    
-2. **Install dependencies inside a virtual environment:**
-   Install dependencies using poetry in a virtual environment
-   using Python3.9 (if not present in the system install it before):
-   ```bash
-   conda env create -f environment.yml
-   conda activate stocksPredictor
-
-   ```
-   if not done automatically activate the virtual environment you just created:
-   ```bash
-   source $(poetry env info --path)/bin/activate
+   The `makefile` can also run the python script of the controller application by:
+      ```bash
+   make run
    ```
 
-   **Optional packages**: 
-   ```bash
-   python -m ipykernel install --user --name=stocksPredictor-conda_env --display-name "stocksPredictor-conda_env"
-   ```
+   You can control the rover either using the app or your keyboard:
+   - **W**: Forward
+   - **S**: Stop
+   - **X**: Backward
+   - **Q**: Rotate counterclockwise
+   - **E**: Rotate clockwise
 
-
-
-## Running the entire code
-
-  The `makefile` in the main folder of the repo the code creates the syntetic database, trains the neural network and postprocesses the data obtained:
-
-   ```bash
-   make all
-   ```
-
-
-
-## Database generation only
-
-
-
-
-## Machine Learning only
 
 
 
