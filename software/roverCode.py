@@ -47,7 +47,7 @@ class MotorControlApp(ctk.CTk):
 
         self.velocity_label = ctk.CTkLabel(self.velocity_frame, text="Speed", font=("Arial", 14))
         self.velocity_label.pack(padx=20, pady=10)
-        self.speed_slider = ctk.CTkSlider(self.velocity_frame, from_=0, to=1, number_of_steps=10, command=self.set_speed, orientation="vertical")
+        self.speed_slider = ctk.CTkSlider(self.velocity_frame, from_=0, to=1, number_of_steps=101, command=self.set_speed, orientation="vertical")
         self.speed_slider.set(self.speed)
         self.speed_slider.pack(pady=10)
         
